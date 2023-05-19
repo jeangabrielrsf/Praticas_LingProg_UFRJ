@@ -1,0 +1,1 @@
+int calculateFibonacci(int number);

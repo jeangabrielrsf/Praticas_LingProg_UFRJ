@@ -13,6 +13,7 @@ class Ponto {
         double getY();
         double getZ();
 
+
     private:
         double dimX, dimY, dimZ;
 };

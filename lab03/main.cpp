@@ -3,7 +3,7 @@
 #define OK  0
 
 int main() {
-    Agenda agenda(5);
+    Agenda agenda;
     agenda.insereNome("Jean");
     agenda.insereNome("Bruna");
     agenda.insereNome("João Pedro");

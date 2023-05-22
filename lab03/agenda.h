@@ -9,14 +9,14 @@ using namespace std;
 
 class Agenda {
     public:
-        Agenda(int tamanho);
         void insereNome(string nome);
         void mostraNomes();
 
+        static int numeroNomes; // números de nomes presente no Array
     private:
         //long unsigned int tamanhoListaNomes;
         const static int maxNomes = 5; // tamanho máximo do Array
-        static int numeroNomes; // números de nomes presente no Array
+        
         string nomes[maxNomes];
 
 };

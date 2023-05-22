@@ -2,6 +2,7 @@
 #include "agenda.h"
 
 
+int Agenda::numeroNomes = 0;
 
 void Agenda::insereNome(string nome) {
     if (numeroNomes >= maxNomes) {
@@ -21,7 +22,7 @@ void Agenda::insereNome(string nome) {
 
 void Agenda::mostraNomes() {
     cout << "Nomes na Agenda" << endl; 
-    for (long unsigned i=0; i < numeroNomes; i++) {
+    for (int i=0; i < numeroNomes; i++) {
         cout << "[" << i+1 << "] " << nomes[i] << endl;
     }
 }

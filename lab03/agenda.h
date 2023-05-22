@@ -4,20 +4,23 @@
 #include <string>
 //#include <vector>
 #include <array>
+#include "cadastro.h"
 
 using namespace std;
 
 class Agenda {
     public:
-        void insereNome(string nome);
-        void mostraNomes();
+        //void insereNome(string nome);
+        void insereCadastro (Cadastro cadastro);
+        //void mostraNomes();
+        void mostraCadastros();
 
-        static int numeroNomes; // números de nomes presente no Array
+        static int numeroCadastros; // números de nomes presente no Array
     private:
         //long unsigned int tamanhoListaNomes;
-        const static int maxNomes = 5; // tamanho máximo do Array
+        const static int maxCadastros = 5; // tamanho máximo do Array
         
-        string nomes[maxNomes];
+        Cadastro cadastros[maxCadastros];
 
 };
 

@@ -7,6 +7,8 @@ using namespace std;
 
 class Cadastro {
     public:
+        Cadastro();
+        Cadastro(string nome, string profissao, unsigned idade);
         string getNome();
         string getProfissao();
         unsigned getIdade();

@@ -1,6 +1,19 @@
 #include <iostream>
 #include "cadastro.h"
 
+Cadastro::Cadastro() {
+    nome = "Padrão";
+    profissao = "Aluno de Graduação";
+    idade = 25;
+}
+
+Cadastro::Cadastro(string name, string job, unsigned age) {
+    nome = name;
+    profissao = job;
+    idade = age;
+}
+
+
 string Cadastro::getNome() {
     return nome;
 }

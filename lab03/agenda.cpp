@@ -22,7 +22,7 @@ void Agenda::insereNome(string nome) {
 
 void Agenda::mostraNomes() {
     cout << "Nomes na Agenda" << endl; 
-    for (int i=0; i < nomes.size(); i++) {
-        cout << "[" << i << "] " << nomes.at(i) << endl;
+    for (long unsigned i=0; i < nomes.size(); i++) {
+        cout << "[" << i+1 << "] " << nomes.at(i) << endl;
     }
 }

@@ -14,7 +14,7 @@ class Agenda {
 
     private:
         vector<string> nomes;
-        int tamanhoListaNomes;
+        long unsigned int tamanhoListaNomes;
 
 };
 

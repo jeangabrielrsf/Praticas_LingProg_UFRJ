@@ -2,7 +2,9 @@
 #include "agenda.h"
 
 
-int Agenda::numeroCadastros = 0;
+Agenda::Agenda(int tamanho) {
+    maxCadastros = tamanho;
+} 
 
 // void Agenda::insereNome(string nome) {
 //     if (numeroNomes >= maxNomes) {
@@ -21,12 +23,11 @@ int Agenda::numeroCadastros = 0;
 // }
 
 void Agenda::insereCadastro(Cadastro cadastro) {
-    if (numeroCadastros >= maxCadastros) {
+    if (cadastros.size() >= maxCadastros) {
         cout << "Lista de cadastros com tamanho máximo! Impossível inserir mais!" << endl;
     } else {
-        cadastros[numeroCadastros] = cadastro;
+        cadastros.push_back(cadastro);
         cout << "Cadastro inserido com sucesso." << endl;
-        numeroCadastros++;
     }
 }
 
@@ -39,11 +40,11 @@ void Agenda::insereCadastro(Cadastro cadastro) {
 
 void Agenda::mostraCadastros() {
     cout << "Cadastros na Agenda" << endl; 
-    for (int i=0; i < numeroCadastros; i++) {
+    for (long unsigned int i=0; i < cadastros.size(); i++) {
         cout 
-            << "[" << i+1 << "] " << cadastros[i].getNome() 
-            << " - " << cadastros[i].getProfissao() 
-            << " - " << cadastros[i].getIdade() 
+            << "[" << i+1 << "] " << cadastros.at(i).getNome() 
+            << " - " << cadastros.at(i).getProfissao() 
+            << " - " << cadastros.at(i).getIdade() 
         << endl;
         
     }

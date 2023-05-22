@@ -5,6 +5,7 @@
 
 class Linha {
     public:
+        Linha (Ponto p1, Ponto p2);
         void setPonto1(Ponto p1);
         void setPonto2(Ponto p2);
 

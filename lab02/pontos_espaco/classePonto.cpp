@@ -6,6 +6,12 @@ Ponto::Ponto(double x, double y, double z) {
     dimZ = z;
 }
 
+Ponto::Ponto() {
+    dimX = 1.0;
+    dimY = 1.0;
+    dimZ = 1.0;
+}
+
 void Ponto::setX(double x) {
     dimX = x;
 }

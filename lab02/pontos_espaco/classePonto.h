@@ -3,6 +3,7 @@
 
 class Ponto {
     public:
+        Ponto();
         Ponto(double x, double y, double z);
 
         void setX(double x);

@@ -2,11 +2,16 @@
 #include <cmath>
 
 
-void Linha::setPonto1(Ponto p1) {
+Linha::Linha (Ponto p1, Ponto p2) {
+    ponto1 = p1;
+    ponto2 = p2;
+}
+
+void Linha::setPonto1 (Ponto p1) {
     ponto1 = p1;
 }
 
-void Linha::setPonto2(Ponto p2) {
+void Linha::setPonto2 (Ponto p2) {
     ponto2 = p2;
 }
 

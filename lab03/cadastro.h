@@ -24,4 +24,4 @@ class Cadastro {
 };
 
 
-#endif CADASTRO_H
+#endif

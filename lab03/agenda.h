@@ -2,7 +2,8 @@
 #define AGENDA_H
 
 #include <string>
-#include <vector>
+//#include <vector>
+#include <array>
 
 using namespace std;
 
@@ -13,8 +14,10 @@ class Agenda {
         void mostraNomes();
 
     private:
-        vector<string> nomes;
-        long unsigned int tamanhoListaNomes;
+        //long unsigned int tamanhoListaNomes;
+        const static int maxNomes = 5; // tamanho máximo do Array
+        static int numeroNomes; // números de nomes presente no Array
+        string nomes[maxNomes];
 
 };
 

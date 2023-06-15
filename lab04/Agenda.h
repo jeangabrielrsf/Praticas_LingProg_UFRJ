@@ -21,8 +21,8 @@ class Agenda{
 
     private:
         vector<Contato> contacts;
-        int maxContacts;
-        const int maxNamesSize = 10;
+        long unsigned int maxContacts;
+        const static int maxNamesSize = 10;
         fstream saveFile;
         string fileName;
 

@@ -25,10 +25,9 @@ bool Agenda::contactExists(string name) {
     for (unsigned i = 0; i < contacts.size(); i++) {
         if (contacts.at(i).getName().compare(name.substr(0, maxNamesSize)) == 0){
             return true;
-        } else {
-            return false;
         }
     };
+    return false;
 }
 
 

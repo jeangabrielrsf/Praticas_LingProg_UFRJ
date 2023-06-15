@@ -1,6 +1,6 @@
 #include "Contato.h"
 
-Contato::Contato(string name, string job, string age) {
+Contato::Contato(string name, string job, int age) {
     this->name = name;
     this->job = job;
     this->age = age;
@@ -14,7 +14,7 @@ string Contato::getJob() {
     return job;
 };
 
-string Contato::getAge() {
+int Contato::getAge() {
     return age;
 };
 
@@ -26,6 +26,6 @@ void Contato::setJob(string job) {
     this->job = job;
 };
 
-void Contato::setAge(string age) {
+void Contato::setAge(int age) {
     this->age = age;
 };

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "Agenda.h"
 
 Agenda::Agenda(int size) {
@@ -91,3 +92,23 @@ void Agenda::writeFile() {
     saveFile.close();
 };
 
+
+void Agenda::showContacts() {
+    cout << endl;
+    cout << "Agenda" << endl;
+    cout 
+        << left << setw(20) << "Nome:"
+        << setw(20) << "Profissão:"
+        << setw(20) << "Idade:"
+    << endl;
+
+    for (unsigned i = 0; i < contacts.size(); i++) {
+        cout
+            << setw(20) << contacts.at(i).getName()
+            << setw(20) << contacts.at(i).getJob()
+            << setw(20) << contacts.at(i).getAge()
+        << endl;
+    }
+    cout << endl;
+
+};

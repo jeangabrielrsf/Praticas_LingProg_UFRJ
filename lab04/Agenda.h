@@ -12,6 +12,8 @@ class Agenda{
         Agenda(int size);
         void addContact(string name, string job, int age);
         void eraseContact(string name);
+        void showContacts();
+
         bool contactExists(string name);
 
         void readFile();

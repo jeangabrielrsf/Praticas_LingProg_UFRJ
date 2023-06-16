@@ -37,3 +37,12 @@ void Caminho::inserirAresta(Aresta *aresta) {
         }
     }
 }
+
+void Caminho::imprimirCaminho() {
+    cout << "Caminho: ";
+    for (unsigned i=0; i < arestas.size(); i++) {
+        cout << arestas.at(i)->getVertice1()->getRotulo() << " -> ";
+    }
+    cout << arestas.at(arestas.size()-1)->getVertice2()->getRotulo() << endl;
+    cout << "Custo: " << custoCaminho() << endl;
+}

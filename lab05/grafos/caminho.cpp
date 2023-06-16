@@ -31,7 +31,7 @@ void Caminho::inserirAresta(Aresta *aresta) {
             cout
                 << "Não é possível inserir a aresta ("
                 << aresta->getVertice1()->getRotulo()
-                <<", " << aresta->getVertice1()->getRotulo()
+                <<", " << aresta->getVertice2()->getRotulo()
                 << ")"
             << endl;
         }

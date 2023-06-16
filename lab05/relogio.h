@@ -22,6 +22,7 @@ class Relogio {
         void setMinutes(int minutes);
         void setSeconds(int seconds);
 
+        void showHour();
     private:
         time_t hour;
         struct tm *infoHour;

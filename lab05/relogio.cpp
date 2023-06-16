@@ -26,15 +26,27 @@ void Relogio::resetHour(int hours, int minutes, int seconds) {
 };
 
 void Relogio::setHours(int hours) {
-    this->hours = hours;
+    if (hours < 0 || hours > 59) {
+        this->hours = 0;
+    } else {
+        this->hours = hours;
+    }
 };
 
 void Relogio::setMinutes(int minutes) {
-    this->minutes = minutes;
+   if (minutes < 0 || minutes > 59) {
+        this->minutes = 0;
+    } else {
+        this->minutes = minutes;
+    }
 };
 
 void Relogio::setSeconds(int seconds) {
-    this->seconds =  seconds;
+     if (seconds < 0 || seconds > 59) {
+        this->seconds = 0;
+    } else {
+        this->seconds = seconds;
+    }
 };
 
 int Relogio::getHours() {

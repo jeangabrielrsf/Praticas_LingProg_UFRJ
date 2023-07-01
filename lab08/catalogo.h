@@ -11,34 +11,40 @@ using namespace std;
 //ATENÇÃO: NÃO PODEM TER FILMES COM O MESMO NOME!!!
 
 
-    struct Movie {
-        string name;
-        string label;
-        double grade;
-    };
+struct Movie {
+    string name;
+    string label;
+    double grade;
+
+    friend ostream &operator<< (ostream &out, Movie &m) {
+        out << "Filme: " << m.name << endl;
+        out << "Produtora: " << m.label << endl;
+        out << "Nota: " << m.grade << endl;
+
+        return out; 
+    }
+};
 
 class Catalogo {
     public:
 
+        friend ostream &operator<< (ostream &, Movie &);
         friend ostream &operator<< (ostream &, Catalogo &);
         friend ostream &operator>> (ostream &, Catalogo &);
         void operator+=(const Movie& movie);
         int operator-=(const Movie& movie);
         int operator() (string movieName);
-        void listAllMovies();
-        void listMovie(string movieName);
-        void insertMovie(string movieName, string labelName, double grade);
-        void insertMovieSorted(string movieName, string labelName, double grade);
-        int deleteMovie(string movieName); //retorna o índice em que o filme foi removido
-        int searchMostRated();
 
+        
+        string getMovieLabel(int index);
+        double getMovieGrade(int index);
+
+        friend struct Movie;
+        
     private:
-      
         vector<Movie> movies;
         int maxMovies;
 
 };
-
-
 
 #endif

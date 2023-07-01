@@ -13,6 +13,8 @@ int main() {
     string editAttribute;
     double editGradeAttribute;
 
+    catalogo.readFile();
+
 
         system("clear");
     while (menuOption != 9) {
@@ -130,7 +132,20 @@ int main() {
 
             case 6: 
                 system("clear");
-                cout << "Operação 1";
+                movieIndex = catalogo.getMoreRatedMovie();
+                if (movieIndex == -1) {
+                    cout << "Nenhum filme no catálogo!\n\n" << endl;
+                } else {
+
+                
+                cout << "O filme de maior nota se encontra no índice"
+                    << movieIndex
+                << endl;
+                movie.name = catalogo.getMovieName(movieIndex);
+                movie.label = catalogo.getMovieLabel(movieIndex);
+                movie.grade = catalogo.getMovieGrade(movieIndex);
+                cout << movie;
+                }
             break;
 
             case 9:
@@ -145,6 +160,6 @@ int main() {
         }
     }
 
-
+    catalogo.writeFile();
     return 0;
 }

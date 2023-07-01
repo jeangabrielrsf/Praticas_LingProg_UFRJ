@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -23,11 +24,26 @@ struct Movie {
 
         return out; 
     }
+
+    bool operator< (double _grade) {
+        if (grade < _grade) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    bool operator> (double _grade) {
+        if (grade > _grade) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 };
 
 class Catalogo {
     public:
-
         friend ostream &operator<< (ostream &, Movie &);
         friend ostream &operator<< (ostream &, Catalogo &);
         friend ostream &operator>> (ostream &, Catalogo &);
@@ -36,16 +52,23 @@ class Catalogo {
         int operator() (string movieName);
         int operator() (string movieName, string attributeName, string newName);
         int operator() (string movieName, string attributeName, double newGrade);
+        int getMoreRatedMovie();
 
-        
+        string getMovieName(int index);
         string getMovieLabel(int index);
         double getMovieGrade(int index);
+
+        void readFile();
+        void writeFile();
 
         friend struct Movie;
         
     private:
         vector<Movie> movies;
         int maxMovies;
+        fstream file;
+        string fileName = "catalogo.txt";
+
 
 };
 

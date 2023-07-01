@@ -3,6 +3,35 @@
 #include "catalogo.h"
 
 
+
+
+
+void Catalogo::readFile() {
+    Movie movie;
+    file.open(fileName, fstream::in);
+    if (!file.is_open()) {
+        return;
+    }
+    while(file.good()) {
+        file >> movie.name >> movie.label >> movie.grade;
+        movies.push_back(movie);
+    }
+    file.close();
+}
+
+void Catalogo::writeFile() {
+    file.open(fileName, fstream::out);
+    for (unsigned i=0; i < movies.size(); i++) {
+        file
+            << movies.at(i).name << " "
+            << movies.at(i).label << " "
+            << setprecision(2) << movies.at(i).grade
+        << endl;
+    }
+    file.close();
+}
+
+
 ostream &operator<< (ostream &out, Catalogo &c) {
     Movie movie;
     for (unsigned i = 0; i < c.movies.size(); i++) {
@@ -68,6 +97,25 @@ int Catalogo::operator() (string movieName, string attributeName, double newGrad
 }
 
 
+int Catalogo::getMoreRatedMovie() {
+    int movieIndex;
+    double maxGrade = 0;
+    if (movies.empty()) {
+        return -1;
+    }
+    for (unsigned i = 0; i < movies.size(); i++) {
+        if (movies.at(i) > maxGrade) {
+            maxGrade = movies.at(i).grade;
+            movieIndex = i;
+        }
+    }
+    return movieIndex;
+}
+
+
+string Catalogo::getMovieName(int index) {
+    return movies.at(index).name;
+}
 
 string Catalogo::getMovieLabel(int index) {
     return movies.at(index).label;

@@ -9,10 +9,14 @@ int main() {
     int menuOption = 0;
     Movie movie;
     int movieIndex;
+    string editChoice;
+    string editAttribute;
+    double editGradeAttribute;
 
 
-
+        system("clear");
     while (menuOption != 9) {
+
     cout 
         <<"********************************" << endl
         << setw(20) << "Menu Principal" << endl
@@ -20,7 +24,7 @@ int main() {
         << "1 - Mostrar catálogo de filmes" << endl //ok só catalogo
         << "2 - Inserir filme no catálogo" << endl //ok sem ordenar
         << "3 - Remover filme do catálogo" << endl //ok
-        << "4 - Buscar filme no catálogo" << endl
+        << "4 - Buscar filme no catálogo" << endl // ok
         << "5 - Editar informações de um filme" << endl
         << "6 - Mostrar filme mais bem avialiado" << endl
         << "9 - Sair do programa" << endl
@@ -95,7 +99,33 @@ int main() {
 
             case 5: 
                 system("clear");
-                cout << "Operação 1";
+                cin.clear();
+                cin.ignore(__INT_MAX__, '\n');
+                cout << "Digite o nome do filme que quer editar as informações:" << endl;
+                getline(cin, movie.name);
+                cout << "Qual atributo deseja mudar?" << endl
+                << "Escreva [label] para alterar a produtora" << endl
+                << "Escreva [name] para alterar o nome do filme" << endl
+                << "Escreva [grade] para alterar a nota do filme" << endl
+                << "OBS: escrever sem os colchetes!" << endl;
+                getline(cin, editChoice);
+                
+                if(editChoice == "label" || editChoice == "name") {
+                    cout << "Digite o novo valor do atributo " + editChoice + ":" << endl;
+                    getline(cin, editAttribute);
+                    movieIndex = catalogo(movie.name, editChoice, editAttribute);
+                } else if (editChoice == "grade") {
+                    cout << "Digite o novo valor do atributo " + editChoice + ":" << endl;
+                    cin >> editGradeAttribute;
+                    movieIndex = catalogo(movie.name, editChoice, editGradeAttribute);
+                }
+                if (movieIndex != -1) {
+                    cout << "Filme editado no índice " << movieIndex << "!\n\n" << endl;
+                } else {
+                    cout << "Nenhum filme com esse nome encontrado!\n\n" << endl;
+                }
+                cin.clear();
+
             break;
 
             case 6: 

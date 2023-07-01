@@ -34,6 +34,8 @@ class Catalogo {
         void operator+=(const Movie& movie);
         int operator-=(const Movie& movie);
         int operator() (string movieName);
+        int operator() (string movieName, string attributeName, string newName);
+        int operator() (string movieName, string attributeName, double newGrade);
 
         
         string getMovieLabel(int index);

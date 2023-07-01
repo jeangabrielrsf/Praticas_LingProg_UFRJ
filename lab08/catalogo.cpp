@@ -17,18 +17,6 @@ ostream &operator<< (ostream &out, Catalogo &c) {
 }
 
 
-// ostream &operator<< (ostream &out, Movie &m) {
-//     out << "Filme: " << m.name << endl;
-//     out << "Produtora: " << m.label << endl;
-//     out << "Nota: " << m.grade << endl;
-
-//     return out;
-// }
-
-
-
-
-
 void Catalogo::operator+=(const Movie& movie) {
     movies.push_back(movie);
 }
@@ -52,6 +40,34 @@ int Catalogo::operator() (string movieName) {
     }
     return index;
 }
+
+int Catalogo::operator() (string movieName, string attributeName, string newName) {
+    int movieIndex = -1;
+    for (unsigned i = 0; i < movies.size(); i++) {
+        if (movies.at(i).name == movieName) {
+            movieIndex = i;
+            if (attributeName == "label") {
+                movies.at(i).label = newName;
+            } else if (attributeName == "name") {
+                movies.at(i).name = newName;
+            } 
+        }
+    }
+    return movieIndex;
+}
+
+int Catalogo::operator() (string movieName, string attributeName, double newGrade) {
+    int movieIndex = -1;
+    for (unsigned i = 0; i < movies.size(); i++) {
+        if (movies.at(i).name == movieName) {
+            movieIndex = i;
+            movies.at(i).grade = newGrade;
+        }
+    }
+    return movieIndex;
+}
+
+
 
 string Catalogo::getMovieLabel(int index) {
     return movies.at(index).label;

@@ -6,20 +6,25 @@
 
 using namespace std;
 
-struct {
-    string name;
-    string label;
-    double grade;
-} movie ;
+
 
 //ATENÇÃO: NÃO PODEM TER FILMES COM O MESMO NOME!!!
 
+
+    struct Movie {
+        string name;
+        string label;
+        double grade;
+    };
+
 class Catalogo {
     public:
-        int Catalogo(string movieName);
-        int Catalogo(string movieName, string attributeName, string newName);
-        int Catalogo(string movieName, string attributeName, string newLabel);
-        int Catalogo(string movieName, string attributeName, string newGrade);
+
+        friend ostream &operator<< (ostream &, Catalogo &);
+        friend ostream &operator>> (ostream &, Catalogo &);
+        void operator+=(const Movie& movie);
+        int operator-=(const Movie& movie);
+        int operator() (string movieName);
         void listAllMovies();
         void listMovie(string movieName);
         void insertMovie(string movieName, string labelName, double grade);
@@ -28,8 +33,12 @@ class Catalogo {
         int searchMostRated();
 
     private:
-        vector<movie> movies;
+      
+        vector<Movie> movies;
         int maxMovies;
-}
+
+};
+
+
 
 #endif

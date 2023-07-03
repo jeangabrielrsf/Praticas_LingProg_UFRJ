@@ -17,3 +17,7 @@ Forca::Forca(int rodadas) {
     lerArquivo();
     numRodadas = rodadas;
 }
+
+int Forca::getWordsQuantity() {
+    return palavras.size();
+}

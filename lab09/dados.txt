@@ -1,0 +1,4 @@
+Avião
+Banana
+Carro
+Cachorro

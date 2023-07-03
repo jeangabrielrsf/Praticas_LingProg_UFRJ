@@ -1,0 +1,12 @@
+[
+    {
+        "command": "g++    -c -o vertice.o vertice.cpp",
+        "directory": "/home/jeanfrusca/Documentos/Faculdade/2023-1/LingProg/Praticas/lab06",
+        "file": "/home/jeanfrusca/Documentos/Faculdade/2023-1/LingProg/Praticas/lab06/vertice.cpp"
+    },
+    {
+        "command": "g++    -c -o main.o main.cpp",
+        "directory": "/home/jeanfrusca/Documentos/Faculdade/2023-1/LingProg/Praticas/lab06",
+        "file": "/home/jeanfrusca/Documentos/Faculdade/2023-1/LingProg/Praticas/lab06/main.cpp"
+    }
+]

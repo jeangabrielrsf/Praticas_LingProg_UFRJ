@@ -1,10 +1,11 @@
+#include <iomanip>
 #include "agenda.h"
 
 ostream &operator<< (ostream &out, Agenda &a) {
     for (unsigned i = 0; i < a.contatos.size(); i++) {
-        out << a.contatos.at(i)->getNome()
+        out << left << setw(15) << a.contatos.at(i)->getNome()
             << " | "
-            << a.contatos.at(i)->getTelefone()
+            << right <<  a.contatos.at(i)->getTelefone()
         << endl;
     }
 
@@ -26,7 +27,7 @@ void Agenda::removerContato(Contato &c) {
     for (unsigned i = 0; i < contatos.size(); i++) {
         if (contatos.at(i)->getNome() == c.getNome()) {
             achou = true;
-            contatos.erase(contatos.begin(), contatos.begin()+i);
+            contatos.erase(contatos.begin() + i);
         }
     }
     if (!achou) {
@@ -72,4 +73,5 @@ Agenda Agenda::operator- (const Agenda& a) {
             novaAgenda.inserirContato(*this->contatos.at(i));
         }
     }
+    return novaAgenda;
 }

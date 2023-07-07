@@ -1,4 +1,4 @@
-Avião
-Banana
-Carro
-Cachorro
+Avião, Veículo
+Banana, Fruta
+Carro, Veículo
+Cachorro, Transporte

@@ -1,5 +1,16 @@
 #include "agenda.h"
 
+ostream &operator<< (ostream &out, Agenda &a) {
+    for (unsigned i = 0; i < a.contatos.size(); i++) {
+        out << a.contatos.at(i)->getNome()
+            << " | "
+            << a.contatos.at(i)->getTelefone()
+        << endl;
+    }
+
+    return out;
+}
+
 Agenda::Agenda() {};
 
 Agenda::Agenda(const Agenda &a) {

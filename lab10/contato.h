@@ -14,6 +14,7 @@ class Contato {
         string getNome();
         string getTelefone();
 
+
     private:
         string nome;
         string telefone;

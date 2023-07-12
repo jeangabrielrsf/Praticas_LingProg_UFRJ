@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/jeanfrusca/Documentos/Faculdade/2023-1/LingProg/Praticas/lab10",
-      "program": "/home/jeanfrusca/Documentos/Faculdade/2023-1/LingProg/Praticas/lab10/build/Debug/outDebug",
+      "cwd": "/home/jeanfrusca/Documentos/Faculdade/2023.1/Praticas_LingProg_UFRJ/lab10",
+      "program": "/home/jeanfrusca/Documentos/Faculdade/2023.1/Praticas_LingProg_UFRJ/lab10/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

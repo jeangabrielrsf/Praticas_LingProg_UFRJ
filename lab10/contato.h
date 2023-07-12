@@ -4,15 +4,18 @@
 #include <string>
 
 
+
 using namespace std;
 
 
 //TODO: Construtor para inicializar atributos e getters para cada atributo
 class Contato {
     public:
-        Contato(string _nome = "Padrão", string _telefone = "21987654321");
+        Contato(string _nome = "Default", string _telefone = "21987654321");
         string getNome();
         string getTelefone();
+
+        void print();
 
 
     private:

@@ -3,10 +3,7 @@
 
 ostream &operator<< (ostream &out, Agenda &a) {
     for (unsigned i = 0; i < a.contatos.size(); i++) {
-        out << left << setw(15) << a.contatos.at(i)->getNome()
-            << " | "
-            << right <<  a.contatos.at(i)->getTelefone()
-        << endl;
+        ((a.contatos).at(i))->print();
     }
 
     return out;
